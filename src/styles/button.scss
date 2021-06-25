@@ -1,11 +1,11 @@
 .button {
-  margin-top: 64px;
   height: 50px;
   border-radius: 8px;
   font-weight: 500;
   background: var(--primary);
   color: var(--white);
   padding: 0 32px;
+  outline: none;
 
   display: flex;
   justify-content: center;
