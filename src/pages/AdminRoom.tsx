@@ -1,14 +1,13 @@
-import { FormEvent, useState } from "react";
 import { useParams } from "react-router-dom";
-import toast from "react-hot-toast";
 
-import { useAuth } from "../hooks/useAuth";
+// import { useAuth } from "../hooks/useAuth";
 import { useRoom } from "../hooks/useRoom";
 import { Button } from "../components/Button";
-import { database } from "../services/firebase";
 import { RoomCode } from "../components/RoomCode";
+import { database } from "../services/firebase";
 
 import logoImg from "../assets/images/logo.svg";
+import deleteImg from "../assets/images/delete.svg";
 
 import "../styles/room.scss";
 import { Question } from "../components/Question";
@@ -18,53 +17,16 @@ type RoomParams = {
 };
 
 export function AdminRoom() {
-  const { user } = useAuth();
+  // const { user } = useAuth();
   const params = useParams<RoomParams>();
   const roomId = params.id;
-  const [newQuestion, setNewQuestion] = useState("");
+
   const { questions, title } = useRoom(roomId);
 
-  async function handleSendQuestion(event: FormEvent) {
-    event.preventDefault();
-
-    if (newQuestion.trim() === "") {
-      toast.error("Question empty", {
-        style: {
-          fontWeight: "bold",
-          fontSize: 14,
-        },
-      });
-      return;
+  async function handleDeleteQuestion(id: string) {
+    if (window.confirm("Deseja realmente apagar a pergunta ?")) {
+      await database.ref(`rooms/${roomId}/questions/${id}`).remove();
     }
-
-    if (!user) {
-      toast.error("You must be logged in!", {
-        style: {
-          fontWeight: "bold",
-          fontSize: 14,
-        },
-      });
-      return;
-    }
-
-    const question = {
-      content: newQuestion,
-      author: {
-        name: user?.name,
-        avatar: user?.avatar,
-      },
-      isHighlighted: false,
-      isAnswered: false,
-    };
-
-    await database.ref(`rooms/${roomId}/questions/`).push(question);
-    toast.success("Question sent", {
-      style: {
-        fontWeight: "bold",
-        fontSize: 14,
-      },
-    });
-    setNewQuestion("");
   }
 
   return (
@@ -87,7 +49,11 @@ export function AdminRoom() {
 
         <div className="question-list">
           {questions.map(({ id, content, author }) => (
-            <Question key={id} content={content} author={author} />
+            <Question key={id} content={content} author={author}>
+              <button type="button" onClick={() => handleDeleteQuestion(id)}>
+                <img src={deleteImg} alt="Remover pergunta" />
+              </button>
+            </Question>
           ))}
         </div>
       </main>
