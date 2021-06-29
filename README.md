@@ -12,8 +12,6 @@
     <img  style="border-radius: px;" alt="Letmeask" src="./src/assets/images/README.png" />
 </h1>
 
-<br>
-
 ## 🧪 Tecnologias
 
 Esse projeto foi desenvolvido com as seguintes tecnologias:
@@ -45,7 +43,7 @@ $ yarn start
 O app estará disponível no seu browser pelo endereço http://localhost:3000.
 
 Lembrando que será necessário criar uma conta no [Firebase](https://firebase.google.com/) e um projeto para disponibilizar um Realtime Database.
-E alterar criar um arquivo com o nome ".env.local", para colocar as suas credenciais de acesso do Firebase.
+É necessário também alterar criar um arquivo com o nome ".env.local", na raiz do projeto, para colocar as suas credenciais de acesso do Firebase.
 
 ## 💻 Projeto
 
@@ -53,10 +51,13 @@ Letmeask é perfeito para criadores de conteúdos poderem criar salas de Q&A com
 
 ## 📑 Desafios (Em andamento)
 
-[ ] Responsividade
-[ ] Tema Dark
-[ ] Styled Components
-[ ] PWA
+- [ ] Responsividade
+
+- [ ] Tema Dark
+
+- [ ] Styled Components
+
+- [ ] PWA
 
 ## 📝 License
 
