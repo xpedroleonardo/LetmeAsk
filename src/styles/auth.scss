@@ -2,7 +2,7 @@
   display: flex;
   align-items: stretch;
   height: 100vh;
-  
+
   aside {
     flex: 4;
 
@@ -20,11 +20,10 @@
     }
 
     strong {
-      font: 700 36px 'Poppins',sans-serif;
+      font: 700 36px "Poppins", sans-serif;
       line-height: 42px;
       margin-top: 16px;
     }
-
 
     p {
       font-size: 24px;
@@ -58,7 +57,7 @@
     h2 {
       font-size: 24px;
       margin: 64px 0 24px;
-      font-family: 'Poppins', sans-serif;
+      font-family: "Poppins", sans-serif;
     }
 
     form {
@@ -79,7 +78,8 @@
         margin-top: 16px;
       }
 
-      input, button {
+      input,
+      button {
         width: 100%;
       }
     }
@@ -90,7 +90,7 @@
       margin-top: 16px;
 
       a {
-        color: var(--pink);
+        color: var(--link);
       }
     }
   }
@@ -130,7 +130,7 @@
     align-items: center;
 
     &::before {
-      content: '';
+      content: "";
       flex: 1;
       height: 1px;
       background: var(--lightGray);
@@ -138,7 +138,7 @@
     }
 
     &::after {
-      content: '';
+      content: "";
       flex: 1;
       height: 1px;
       background: var(--lightGray);
