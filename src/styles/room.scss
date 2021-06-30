@@ -59,8 +59,8 @@
         border-radius: 8px;
         background: var(--white);
         box-shadow: 0 2px 12px rgba(0, 0, 0, 0.04);
-        resize: vertical;
-        min-height: 130px;
+        resize: none;
+        height: 200px;
         outline: none;
 
         &:focus {
@@ -109,6 +109,21 @@
             cursor: pointer;
           }
         }
+      }
+    }
+
+    .empty {
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: 50px 190px;
+
+      img {
+        width: 250px;
+      }
+
+      h2 {
+        margin: 10px 0;
       }
     }
 

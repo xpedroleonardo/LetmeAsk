@@ -5,6 +5,7 @@ import { useAuth } from "./useAuth";
 type FirebaseQuestions = Record<
   string,
   {
+    authorId: string;
     author: {
       name: string;
       avatar: string;
@@ -50,6 +51,7 @@ export function useRoom(roomId: string) {
         ([key, value]) => {
           return {
             id: key,
+            authorId: value.authorId,
             content: value.content,
             author: value.author,
             isHighlighted: value.isHighlighted,

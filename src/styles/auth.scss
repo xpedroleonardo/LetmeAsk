@@ -88,6 +88,7 @@
       font-size: 14px;
       color: #737380;
       margin-top: 16px;
+      width: 299px;
 
       a {
         color: var(--link);
@@ -100,20 +101,21 @@
     height: 50px;
     border-radius: 8px;
     font-weight: 500;
-    background: var(--red);
-    color: var(--white);
+    background: var(--white);
+    color: #000;
 
     display: flex;
     justify-content: center;
     align-items: center;
 
     cursor: pointer;
-    border: 0;
+    border: 1px solid #000;
 
     transition: filter 0.2s;
 
     img {
       margin-right: 8px;
+      width: 22px;
     }
 
     &:hover {
