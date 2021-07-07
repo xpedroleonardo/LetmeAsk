@@ -1,4 +1,6 @@
-#page-room {
+import styled from "styled-components";
+
+export const Container = styled.div`
   header {
     padding: 24px;
     border-bottom: 1px solid #e2e2e2;
@@ -67,68 +69,68 @@
           box-shadow: 0 0 0 2px var(--primary);
         }
       }
-
-      .form-footer {
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        margin-top: 16px;
-
-        .user-info {
-          display: flex;
-          align-items: center;
-
-          img {
-            width: 32px;
-            height: 32px;
-            border-radius: 50%;
-          }
-
-          span {
-            margin-left: 8px;
-            color: var(--darkGray);
-            font-weight: 500;
-            font-size: 14px;
-          }
-        }
-
-        > span {
-          font-size: 14px;
-          color: #737380;
-          font-weight: 500;
-
-          button {
-            font-size: 14px;
-            font-weight: 500;
-
-            background: transparent;
-            color: var(--primary);
-            border: none;
-            outline: none;
-            text-decoration: underline;
-            cursor: pointer;
-          }
-        }
-      }
-    }
-
-    .empty {
-      align-items: center;
-      justify-content: center;
-      text-align: center;
-      padding: 50px 190px;
-
-      img {
-        width: 250px;
-      }
-
-      h2 {
-        margin: 10px 0;
-      }
     }
 
     .question-list {
       margin: 32px 0;
     }
   }
-}
+`;
+
+export const FormFooter = styled.div`
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 16px;
+
+  .user-info {
+    display: flex;
+    align-items: center;
+
+    img {
+      width: 32px;
+      height: 32px;
+      border-radius: 50%;
+    }
+
+    span {
+      margin-left: 8px;
+      color: var(--darkGray);
+      font-weight: 500;
+      font-size: 14px;
+    }
+  }
+
+  > span {
+    font-size: 14px;
+    color: #737380;
+    font-weight: 500;
+
+    button {
+      font-size: 14px;
+      font-weight: 500;
+
+      background: transparent;
+      color: var(--primary);
+      border: none;
+      outline: none;
+      text-decoration: underline;
+      cursor: pointer;
+    }
+  }
+`;
+
+export const Empty = styled.div`
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 50px 190px;
+
+  img {
+    width: 250px;
+  }
+
+  h2 {
+    margin: 10px 0;
+  }
+`;

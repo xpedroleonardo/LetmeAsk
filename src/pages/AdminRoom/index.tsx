@@ -2,22 +2,22 @@ import { useHistory, useParams } from "react-router-dom";
 import Modal from "react-modal";
 
 // import { useAuth } from "../hooks/useAuth";
-import { useRoom } from "../hooks/useRoom";
-import { Button } from "../components/Button";
-import { RoomCode } from "../components/RoomCode";
-import { database } from "../services/firebase";
+import { useRoom } from "../../hooks/useRoom";
+import { Button } from "../../components/Button";
+import { RoomCode } from "../../components/RoomCode";
+import { database } from "../../services/firebase";
 
-import logoImg from "../assets/images/logo.svg";
-import deleteImg from "../assets/images/delete.svg";
-import checkImg from "../assets/images/check.svg";
-import answerImg from "../assets/images/answer.svg";
-import emptyImg from "../assets/images/empty-questions.svg";
-import dangerImg from "../assets/images/danger.svg";
+import logoImg from "../../assets/images/logo.svg";
+import deleteImg from "../../assets/images/delete.svg";
+import checkImg from "../../assets/images/check.svg";
+import answerImg from "../../assets/images/answer.svg";
+import emptyImg from "../../assets/images/empty-questions.svg";
+import dangerImg from "../../assets/images/danger.svg";
 
-import "../styles/room.scss";
-import "../styles/modal.scss";
+import { Container, Empty } from "../Room/styles";
+import "../../styles/modal.scss";
 
-import { Question } from "../components/Question";
+import { Question } from "../../components/Question";
 import { useState } from "react";
 
 type RoomParams = {
@@ -78,7 +78,7 @@ export function AdminRoom() {
   }
 
   return (
-    <div id="page-room">
+    <Container>
       <header>
         <div className="content">
           <img src={logoImg} alt="LetmeAsk" draggable="false" />
@@ -134,14 +134,14 @@ export function AdminRoom() {
               )
             )
           ) : (
-            <div className="empty">
+            <Empty>
               <img src={emptyImg} alt="Perguntas" />
               <h2>Nenhuma pergunta por aqui...</h2>
               <p>
                 Envie o código desta sala para seus amigos e comece a responder
                 perguntas!
               </p>
-            </div>
+            </Empty>
           )}
         </div>
       </main>
@@ -161,6 +161,6 @@ export function AdminRoom() {
           </div>
         </div>
       </Modal>
-    </div>
+    </Container>
   );
 }

@@ -1,7 +1,7 @@
 import { ReactNode } from "react";
 import cn from "classnames";
 
-import "../styles/question.scss";
+import { Container, UserInfo } from "./styles";
 
 type QuestionProps = {
   content: string;
@@ -22,7 +22,7 @@ export function Question({
   isHighlighted = false,
 }: QuestionProps) {
   return (
-    <div
+    <Container
       className={cn(
         "question",
         { answered: isAnswered },
@@ -31,12 +31,12 @@ export function Question({
     >
       <p>{content}</p>
       <footer>
-        <div className="user-info">
+        <UserInfo>
           <img src={author.avatar} alt={author.name} />
           <span>{author.name}</span>
-        </div>
+        </UserInfo>
         <div>{children}</div>
       </footer>
-    </div>
+    </Container>
   );
 }

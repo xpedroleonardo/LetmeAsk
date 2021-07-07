@@ -2,17 +2,17 @@ import { FormEvent, useState } from "react";
 import { useParams } from "react-router-dom";
 import toast from "react-hot-toast";
 
-import { useAuth } from "../hooks/useAuth";
-import { useRoom } from "../hooks/useRoom";
-import { Button } from "../components/Button";
-import { database } from "../services/firebase";
-import { RoomCode } from "../components/RoomCode";
+import { useAuth } from "../../hooks/useAuth";
+import { useRoom } from "../../hooks/useRoom";
+import { Button } from "../../components/Button";
+import { database } from "../../services/firebase";
+import { RoomCode } from "../../components/RoomCode";
 
-import logoImg from "../assets/images/logo.svg";
-import emptyImg from "../assets/images/empty-questions.svg";
+import logoImg from "../../assets/images/logo.svg";
+import emptyImg from "../../assets/images/empty-questions.svg";
 
-import "../styles/room.scss";
-import { Question } from "../components/Question";
+import { Container, FormFooter, Empty } from "./styles";
+import { Question } from "../../components/Question";
 
 type RoomParams = {
   id: string;
@@ -84,7 +84,7 @@ export function Room() {
   }
 
   return (
-    <div id="page-room">
+    <Container>
       <header>
         <div className="content">
           <img src={logoImg} alt="LetmeAsk" draggable="false" />
@@ -106,7 +106,7 @@ export function Room() {
             value={newQuestion}
           />
 
-          <div className="form-footer">
+          <FormFooter>
             {user ? (
               <div className="user-info">
                 <img src={user.avatar} alt={user.name} draggable="false" />
@@ -121,7 +121,7 @@ export function Room() {
             <Button disabled={!user} type="submit">
               Enviar pergunta
             </Button>
-          </div>
+          </FormFooter>
         </form>
 
         <div className="question-list">
@@ -172,16 +172,16 @@ export function Room() {
               )
             )
           ) : (
-            <div className="empty">
+            <Empty>
               <img src={emptyImg} alt="Perguntas" />
               <h2>Nenhuma pergunta por aqui...</h2>
               <p>
                 Faça o seu login e seja a primeira pessoa a fazer uma pergunta!
               </p>
-            </div>
+            </Empty>
           )}
         </div>
       </main>
-    </div>
+    </Container>
   );
 }
