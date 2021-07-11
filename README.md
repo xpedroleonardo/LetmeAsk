@@ -55,7 +55,7 @@ Letmeask é perfeito para criadores de conteúdos poderem criar salas de Q&A com
 
 - [ ] Tema Dark
 
-- [ ] Styled Components
+- [x] Styled Components
 
 - [ ] PWA
 
