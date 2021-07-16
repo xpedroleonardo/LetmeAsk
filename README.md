@@ -2,12 +2,6 @@
   <img alt="Letmeask" src="./src/assets/images/logo.svg" width="160px">
 </p>
 
-<p align="center">
-  <img src="https://img.shields.io/github/stars/xpedroleonardo/LetmeAsk?label=stars&message=MIT&color=0b87a3&labelColor=000000" alt="Stars">
-
-  <img  src="https://img.shields.io/static/v1?label=license&message=MIT&color=0b87a3&labelColor=000000" alt="License">   
-</p>
-
 <h1 align="center">
     <img  style="border-radius: px;" alt="Letmeask" src="./src/assets/images/README.png" />
 </h1>
